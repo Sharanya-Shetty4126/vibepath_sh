@@ -1,0 +1,54 @@
+#AFE-HACKER-RANK-QN
+#SPIRAL DISPLAY
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        Scanner sc=new Scanner(System.in);
+        //taking input of size from users
+        int m=sc.nextInt();
+        int n=sc.nextInt();
+        int [][]arr=new int [m][n];
+        //inputing the array elements;
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                arr[i][j]=sc.nextInt();
+
+            }
+        }
+        //initializing the row and column variables;
+        int r1=0,r2=m-1;
+        int c1=0,c2=n-1;
+        //looping through the given condition
+        while(r1<=r2 && c1<=c2){
+            //lets print the c1 elemnts from r1 <->r2
+            for(int i=r1;i<=r2;i++)
+                System.out.println(arr[i][c1]);
+            c1++;
+            if(c1>c2)break;
+            //printing r2 elemnts from c1<->c2
+            
+            for(int j=c1;j<=c2;j++)
+                System.out.println(arr[r2][j]);
+            //printing c2 elements from r2 <->r1
+              r2--;
+            for(int i=r2;i>=r1;i--)
+                System.out.println(arr[i][c2]);
+          
+            if(r2<r1)break;
+            //print elemets from c2 to c1 in r1 row;
+             c2--;
+            for(int j=c2;j>=c1;j--)
+                System.out.println(arr[r1][j]);
+
+            r1++;
+           
+            
+        }
+        
+      
+    }
+}
