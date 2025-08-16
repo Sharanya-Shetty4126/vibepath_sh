@@ -9,6 +9,6 @@ class Solution {
         res&=(res-1);
        }
     return count;
-        
+
     }
 }
